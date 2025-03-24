@@ -1,11 +1,21 @@
 "use client";
-import {
-  type Cart,
-  type CartContext,
-  useCartContext,
-} from "../gameshop/context/cartContext";
+import { useCartContext } from "../gameshop/context/cartContext";
 import TotalPrice from "../gameshop/ui/totalPrice";
 import { Order } from "../gameshop/ui/order";
+import { Dispatch, SetStateAction } from "react";
+
+type Cart = {
+  id: string;
+  title: string;
+  price: number;
+  image: string;
+  amount: number;
+};
+
+type CartContext = {
+  cart: Cart[];
+  setCart: Dispatch<SetStateAction<Cart[] | []>>;
+};
 
 export default function CartC() {
   const { cart, setCart } = useCartContext();
