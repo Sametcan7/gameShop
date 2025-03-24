@@ -9,7 +9,7 @@ type CategoriesProps = {
 };
 
 export default function Categories({ categories }: CategoriesProps) {
-  const { category, setCategory } = useFilterContext();
+  const { setCategory } = useFilterContext();
 
   const toggleCategory = (cat: string): void => {
     setCategory((prevCategory) =>
