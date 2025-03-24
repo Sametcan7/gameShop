@@ -1,7 +1,7 @@
 "use client";
 import {
   type Cart,
-  CartContext,
+  type CartContext,
   useCartContext,
 } from "../gameshop/context/cartContext";
 import TotalPrice from "../gameshop/ui/totalPrice";
