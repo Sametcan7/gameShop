@@ -26,7 +26,7 @@ export default function CartC() {
   );
 }
 
-export function Cart({ cart, setCart }: CartContext) {
+function Cart({ cart, setCart }: CartContext) {
   return (
     <div>
       <div className="my-4 flex max-lg:flex-col justify-between gap-4">
