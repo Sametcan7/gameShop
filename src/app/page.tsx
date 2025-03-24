@@ -24,7 +24,7 @@ export default async function Home() {
   return (
     <div>
       <Banner />
-      <div className="max-w-[1400px] gap-4 mx-auto mt-8 flex">
+      <div className="max-w-[1400px] max-lg:flex-col   max-lg:items-center px-4 gap-4 mx-auto mt-8 flex">
         <Filter categories={categories} />
         <CardContainer products={products} />
       </div>

@@ -63,8 +63,7 @@ export function FilterContextProvider({ children }: FilterContextProps) {
 
         return isSearchP && isCategory && isPriceValid;
       });
-      console.log("useefectfilter", filter);
-
+ 
       if (filter && filter.length > 0) {
         setFilteredData(filter);
       } else {

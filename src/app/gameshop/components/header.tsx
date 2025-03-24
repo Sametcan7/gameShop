@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <div className="px-4">
       <HeaderTop />
-      <div className="flex  max-w-[1400px] mx-auto justify-between items-center">
+      <div className="flex max-md:flex-col max-w-[1400px] mx-auto justify-between items-center">
         <Brand />
         <List />
         <User />

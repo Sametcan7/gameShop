@@ -6,6 +6,7 @@ import {
   ReactNode,
   SetStateAction,
   useContext,
+  useEffect,
   useState,
 } from "react";
 
@@ -29,7 +30,19 @@ type CartContextProviderProps = {
 const CartContext = createContext<CartContext | undefined>(undefined);
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
-  const [cart, setCart] = useState<Cart[] | []>([]);
+  const [cart, setCart] = useState<Cart[] | []>(() => {
+    if (typeof window !== "undefined") {
+      const storedData = localStorage.getItem("items");
+      return storedData ? JSON.parse(storedData) : [];
+    }
+    return [];
+  });
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      localStorage.setItem("items", JSON.stringify(cart));
+    }
+  }, [cart]);
 
   return (
     <CartContext.Provider value={{ cart, setCart }}>

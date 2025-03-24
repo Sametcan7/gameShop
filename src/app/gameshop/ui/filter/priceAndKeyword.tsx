@@ -19,7 +19,6 @@ export default function PriceAndKeyword() {
     setPrice([price[0], max]);
   };
 
-  console.log(price);
   return (
     <div className="border-[1px] border-border px-5 pb-4">
       <p className="py-4 border-b-[1px] border-border font-bold text-lg">

@@ -10,7 +10,7 @@ type FilterProps = {
 
 export default function Filter({ categories }: FilterProps) {
   return (
-    <div className="w-[320px] shrink-0">
+    <div className="w-full lg:w-[320px] shrink-0">
       <Categories categories={categories} />
       <PriceAndKeyword />
     </div>

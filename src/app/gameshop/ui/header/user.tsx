@@ -1,3 +1,6 @@
+import Link from "next/link";
+import MyCart from "./myCart";
+
 export default async function User() {
   const user = await fetch("https://api.hyperteknoloji.com.tr/Customer/Get", {
     headers: {
@@ -10,17 +13,27 @@ export default async function User() {
   const { data } = await user.json();
 
   return (
-    <>
+    <div className="flex lg:flex-row flex-col max-lg:py-4 items-center gap-4">
       {data ? (
-        <div className="text-white flex">
-          <p className="pr-2">
-            {data.firstName} {data.lastName}
+        <div className="text-white text-2xl items-center font-bold flex">
+          <div className="pr-2 flex flex-col items-center">
+            <div className="text-2xl">
+              {data.firstName} {data.lastName}
+            </div>
+            <span className="text-sm">{data.email}</span>
+          </div>
+          <p className="text-text-primary  bg-background-secondary rounded-lg  p-2 border-2 border-border">
+            ${data.balance}
           </p>
-          <p>${data.balance}</p>
         </div>
       ) : (
         <div>Loading...</div>
       )}
-    </>
+      <div>
+        <Link href="/cart">
+          <MyCart />
+        </Link>
+      </div>
+    </div>
   );
 }

@@ -27,7 +27,7 @@ export default function Categories({ categories }: CategoriesProps) {
       <ul className="py-2">
         {categories.map((cat) => (
           <li
-            className="text-text-secondary py-1 cursor-pointer"
+            className="text-text-secondary rounded-lg hover:bg-background-secondary p-2  py-1 cursor-pointer"
             key={cat.value}
             onClick={() => toggleCategory(cat.value)}
           >
