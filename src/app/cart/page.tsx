@@ -1,7 +1,7 @@
 "use client";
 import { useCartContext } from "../gameshop/context/cartContext";
+import Order from "../gameshop/ui/order";
 import TotalPrice from "../gameshop/ui/totalPrice";
-import { Order } from "../gameshop/ui/order";
 import { Dispatch, SetStateAction } from "react";
 
 type Cart = {

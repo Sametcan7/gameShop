@@ -14,7 +14,7 @@ type OrderProps = {
   setCart: Dispatch<SetStateAction<Cart[] | []>>;
 };
 
-export function Order({ product, setCart }: OrderProps) {
+export default function Order({ product, setCart }: OrderProps) {
   const [value, setValue] = useState(1);
 
   useEffect(() => {
