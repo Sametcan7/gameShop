@@ -42,7 +42,7 @@ export function FilterContextProvider({ children }: FilterContextProps) {
   ]);
 
   useEffect(() => {
-    if (category.length > 0 || price[0] !== null || price[1] !== null) {
+    if (searchP || category.length > 0 || price[0] !== null || price[1] !== null) {
       setParams(true);
       const filter = data?.filter((data) => {
         // Anahtar kelimeye göre filtrele
