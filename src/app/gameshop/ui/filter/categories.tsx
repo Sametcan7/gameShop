@@ -9,7 +9,7 @@ type CategoriesProps = {
 };
 
 export default function Categories({ categories }: CategoriesProps) {
-  const { setCategory } = useFilterContext();
+  const { category, setCategory } = useFilterContext();
 
   const toggleCategory = (cat: string): void => {
     setCategory((prevCategory) =>
@@ -27,7 +27,13 @@ export default function Categories({ categories }: CategoriesProps) {
       <ul className="py-2">
         {categories.map((cat) => (
           <li
-            className="text-text-secondary rounded-lg hover:bg-background-secondary p-2  py-1 cursor-pointer"
+            // className="text-text-secondary rounded-lg hover:bg-background-secondary p-2  py-1 cursor-pointer"
+
+            className={`p-2 m-1 cursor-pointer rounded-lg hover:bg-text-secondary flex items-center justify-between ${
+              category.includes(cat.value)
+                ? "bg-text-primary hover:bg-[#e99292]"
+                : ""
+            }`}
             key={cat.value}
             onClick={() => toggleCategory(cat.value)}
           >
